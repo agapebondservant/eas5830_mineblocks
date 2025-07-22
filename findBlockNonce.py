@@ -24,7 +24,7 @@ def mine_block(k, prev_hash, transactions):
     nonce = None
     while not hash_binary.endswith('0'*k):
         hash_hex = hashlib.sha256(f"{bin(prev_hash)}{bin(lines)}{bin(num)}".encode('utf-8')).hexdigest()
-        hash_binary = format(hash_hex, 'b')
+        hash_binary = format(hash_hex, 'b') 
         num += 1
     
     nonce = f"{bin(num)}".encode('utf-8')
