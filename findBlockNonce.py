@@ -31,7 +31,7 @@ def mine_block(k, prev_hash, transactions):
             hash_hex.update(line.encode("utf-8"))
 
         hash_hex.update(nonce)
-        hash_hex.hexdigest()
+        hash_hex = hash_hex.hexdigest()
 
         hash_binary = format(int(hash_hex, 16), 'b')
         num += 1
