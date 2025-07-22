@@ -23,11 +23,11 @@ def mine_block(k, prev_hash, transactions):
     hash_binary = ""
     nonce = None
     while not hash_binary.endswith('0'*k):
-        hash_hex = hashlib.sha256(f"{prev_hash}{hex(lines)}{hex(num)}".encode('utf-8')).hexdigest()
+        hash_hex = hashlib.sha256(f"{prev_hash}{lines}{hex(num)[2:]}".encode('utf-8')).hexdigest()
         hash_binary = format(int(hash_hex, 16), 'b')
         num += 1
     
-    nonce = f"{num}".encode('utf-8')
+    nonce = f"{hex(num)}".encode('utf-8')
     assert isinstance(nonce, bytes), 'nonce should be of type bytes'
     return nonce
 
