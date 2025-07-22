@@ -19,7 +19,7 @@ def mine_block(k, prev_hash, transactions):
         return b'\x00'
 
     # TODO your code to find a nonce here
-    num, trailing_zeros, lines = 0, "0"*k, "\n".join(transactions)
+    num, trailing_zeros, lines = 0, "0"*k, "".join(transactions)
     hash_binary = ""
     nonce = None
     while not hash_binary.endswith(trailing_zeros):
