@@ -27,7 +27,7 @@ def mine_block(k, prev_hash, transactions):
         hash_binary = format(int(hash_hex, 16), 'b')
         num += 1
     
-    nonce = num.encode('utf-8')
+    nonce = f"{num}".encode('utf-8')
     assert isinstance(nonce, bytes), 'nonce should be of type bytes'
     return nonce
 
