@@ -38,7 +38,6 @@ def mine_block(k, prev_hash, transactions):
 
         num += 1
     
-    nonce = str(num-1).encode('utf-8')
     assert isinstance(nonce, bytes), 'nonce should be of type bytes'
     return nonce
 
